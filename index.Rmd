@@ -76,7 +76,8 @@ np2=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="multiBarCha
 np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
 np2$addFilters("Year")
 np2$chart(showControls = F)
+#np2$publish("np2",host="gist")
 np2$save("np2.html",cdn=TRUE)
 ```
-<iframe src="np2.html" width=1200 height=400> </iframe>
+<iframe src="http://patilv.github.io/language/np2.html" width=1200 height=500> </iframe>
 
