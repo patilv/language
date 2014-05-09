@@ -57,6 +57,7 @@ We could bring in interactivity to the charts by using the nvd3 JavaScript libra
 2. Hovering over the chart can provide information on the value during that year.
 
 ```{r, results='asis',cache=FALSE}
+library(rCharts)
 np1=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="lineChart")
 np1$set(disabled = c(F, T, T, T, T, T, T, T, T, T, T))
 np1$xAxis(tickValues=c(1983,1986,1990,1995,1998,2002,2006,2009))
@@ -76,8 +77,10 @@ np2=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="multiBarCha
 np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
 np2$addFilters("Year")
 np2$chart(showControls = F)
+np2$chart(margin = list(left = 0,right=0))
+np2
 #np2$publish("np2",host="gist")
-np2$save("np2.html",cdn=TRUE)
+#np2$save("np2.html",cdn=TRUE)
 ```
 <iframe src="http://patilv.github.io/language/np2.html" width=1200 height=500> </iframe>
 
