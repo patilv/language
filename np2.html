@@ -1,0 +1,610 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel='stylesheet' href='http://nvd3.org/assets/css/nv.d3.css'>
+    
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'></script>
+    <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='http://timelyportfolio.github.io/rCharts_nvd3_tests/libraries/widgets/nvd3/js/nv.d3.min-new.js' type='text/javascript'></script>
+    <script src='http://nvd3.org/assets/lib/fisheye.js' type='text/javascript'></script>
+    
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    
+    <style>
+    .rChart {
+      display: block
+      margin: auto auto;
+      width: 100%;
+      height: 400px;
+    }
+    .bs-docs-example:after {
+      content: "";
+      background: transparent;
+      border: none;
+    }
+    </style>
+    
+  </head>
+  <body ng-app>
+      
+    <div class='container' ng-controller="DemoCtrl">
+  <div class='row'>
+    <div class='col-md-3'>
+      <form class='well'>
+        
+        <select
+          ng-model="selected" 
+          ng-options="c as c.value group by c.variable for c in filters" 
+          class="form-control" multiple size="10">
+        </select>
+      </form>
+    </div>
+    <div class='col-md-8'>
+      <div class="bs-docs-example">
+        <div id='chart18447e55d7' class='rChart '>
+          <svg></svg>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function DemoCtrl($scope){
+  $scope.opts = {
+ "dom": "chart18447e55d7",
+"width":    700,
+"height":    400,
+"x": "Year",
+"y": "Enrollments",
+"group": "Language",
+"type": "multiBarChart",
+"disabled": [ false, true, true, true, true, true, true, false, true, true, true ],
+"id": "chart18447e55d7" 
+}
+  $scope.data = [
+ {
+ "Year": 2009,
+"Language": "Indian",
+"Enrollments": 3929 
+},
+{
+ "Year": 2006,
+"Language": "Indian",
+"Enrollments": 3034 
+},
+{
+ "Year": 2002,
+"Language": "Indian",
+"Enrollments": 2323 
+},
+{
+ "Year": 1998,
+"Language": "Indian",
+"Enrollments": 1506 
+},
+{
+ "Year": 1995,
+"Language": "Indian",
+"Enrollments": 1232 
+},
+{
+ "Year": 1990,
+"Language": "Indian",
+"Enrollments": 611 
+},
+{
+ "Year": 1986,
+"Language": "Indian",
+"Enrollments": 522 
+},
+{
+ "Year": 1983,
+"Language": "Indian",
+"Enrollments": 408 
+},
+{
+ "Year": 2009,
+"Language": "French",
+"Enrollments": 215954 
+},
+{
+ "Year": 2006,
+"Language": "French",
+"Enrollments": 206079 
+},
+{
+ "Year": 2002,
+"Language": "French",
+"Enrollments": 201979 
+},
+{
+ "Year": 1998,
+"Language": "French",
+"Enrollments": 199064 
+},
+{
+ "Year": 1995,
+"Language": "French",
+"Enrollments": 205351 
+},
+{
+ "Year": 1990,
+"Language": "French",
+"Enrollments": 273116 
+},
+{
+ "Year": 1986,
+"Language": "French",
+"Enrollments": 275132 
+},
+{
+ "Year": 1983,
+"Language": "French",
+"Enrollments": 270101 
+},
+{
+ "Year": 2009,
+"Language": "German",
+"Enrollments": 96270 
+},
+{
+ "Year": 2006,
+"Language": "German",
+"Enrollments": 94181 
+},
+{
+ "Year": 2002,
+"Language": "German",
+"Enrollments": 91100 
+},
+{
+ "Year": 1998,
+"Language": "German",
+"Enrollments": 89013 
+},
+{
+ "Year": 1995,
+"Language": "German",
+"Enrollments": 96263 
+},
+{
+ "Year": 1990,
+"Language": "German",
+"Enrollments": 133594 
+},
+{
+ "Year": 1986,
+"Language": "German",
+"Enrollments": 120920 
+},
+{
+ "Year": 1983,
+"Language": "German",
+"Enrollments": 128140 
+},
+{
+ "Year": 2009,
+"Language": "Italian",
+"Enrollments": 80672 
+},
+{
+ "Year": 2006,
+"Language": "Italian",
+"Enrollments": 78091 
+},
+{
+ "Year": 2002,
+"Language": "Italian",
+"Enrollments": 63899 
+},
+{
+ "Year": 1998,
+"Language": "Italian",
+"Enrollments": 49287 
+},
+{
+ "Year": 1995,
+"Language": "Italian",
+"Enrollments": 43760 
+},
+{
+ "Year": 1990,
+"Language": "Italian",
+"Enrollments": 49824 
+},
+{
+ "Year": 1986,
+"Language": "Italian",
+"Enrollments": 40904 
+},
+{
+ "Year": 1983,
+"Language": "Italian",
+"Enrollments": 38672 
+},
+{
+ "Year": 2009,
+"Language": "Japanese",
+"Enrollments": 73328 
+},
+{
+ "Year": 2006,
+"Language": "Japanese",
+"Enrollments": 66076 
+},
+{
+ "Year": 2002,
+"Language": "Japanese",
+"Enrollments": 52238 
+},
+{
+ "Year": 1998,
+"Language": "Japanese",
+"Enrollments": 43141 
+},
+{
+ "Year": 1995,
+"Language": "Japanese",
+"Enrollments": 44723 
+},
+{
+ "Year": 1990,
+"Language": "Japanese",
+"Enrollments": 45830 
+},
+{
+ "Year": 1986,
+"Language": "Japanese",
+"Enrollments": 23454 
+},
+{
+ "Year": 1983,
+"Language": "Japanese",
+"Enrollments": 16127 
+},
+{
+ "Year": 2009,
+"Language": "Spanish",
+"Enrollments": 862688 
+},
+{
+ "Year": 2006,
+"Language": "Spanish",
+"Enrollments": 821654 
+},
+{
+ "Year": 2002,
+"Language": "Spanish",
+"Enrollments": 745127 
+},
+{
+ "Year": 1998,
+"Language": "Spanish",
+"Enrollments": 656445 
+},
+{
+ "Year": 1995,
+"Language": "Spanish",
+"Enrollments": 606286 
+},
+{
+ "Year": 1990,
+"Language": "Spanish",
+"Enrollments": 534143 
+},
+{
+ "Year": 1986,
+"Language": "Spanish",
+"Enrollments": 411376 
+},
+{
+ "Year": 1983,
+"Language": "Spanish",
+"Enrollments": 386320 
+},
+{
+ "Year": 2009,
+"Language": "Arabic",
+"Enrollments": 35083 
+},
+{
+ "Year": 2006,
+"Language": "Arabic",
+"Enrollments": 23956 
+},
+{
+ "Year": 2002,
+"Language": "Arabic",
+"Enrollments": 10584 
+},
+{
+ "Year": 1998,
+"Language": "Arabic",
+"Enrollments": 5505 
+},
+{
+ "Year": 1995,
+"Language": "Arabic",
+"Enrollments": 4444 
+},
+{
+ "Year": 1990,
+"Language": "Arabic",
+"Enrollments": 3683 
+},
+{
+ "Year": 1986,
+"Language": "Arabic",
+"Enrollments": 3417 
+},
+{
+ "Year": 1983,
+"Language": "Arabic",
+"Enrollments": 3441 
+},
+{
+ "Year": 2009,
+"Language": "Chinese",
+"Enrollments": 60311 
+},
+{
+ "Year": 2006,
+"Language": "Chinese",
+"Enrollments": 51286 
+},
+{
+ "Year": 2002,
+"Language": "Chinese",
+"Enrollments": 34153 
+},
+{
+ "Year": 1998,
+"Language": "Chinese",
+"Enrollments": 28456 
+},
+{
+ "Year": 1995,
+"Language": "Chinese",
+"Enrollments": 26471 
+},
+{
+ "Year": 1990,
+"Language": "Chinese",
+"Enrollments": 19427 
+},
+{
+ "Year": 1986,
+"Language": "Chinese",
+"Enrollments": 16891 
+},
+{
+ "Year": 1983,
+"Language": "Chinese",
+"Enrollments": 13178 
+},
+{
+ "Year": 2009,
+"Language": "Korean",
+"Enrollments": 8511 
+},
+{
+ "Year": 2006,
+"Language": "Korean",
+"Enrollments": 7145 
+},
+{
+ "Year": 2002,
+"Language": "Korean",
+"Enrollments": 5211 
+},
+{
+ "Year": 1998,
+"Language": "Korean",
+"Enrollments": 4479 
+},
+{
+ "Year": 1995,
+"Language": "Korean",
+"Enrollments": 3343 
+},
+{
+ "Year": 1990,
+"Language": "Korean",
+"Enrollments": 2375 
+},
+{
+ "Year": 1986,
+"Language": "Korean",
+"Enrollments": 875 
+},
+{
+ "Year": 1983,
+"Language": "Korean",
+"Enrollments": 660 
+},
+{
+ "Year": 2009,
+"Language": "Portuguese",
+"Enrollments": 11371 
+},
+{
+ "Year": 2006,
+"Language": "Portuguese",
+"Enrollments": 10267 
+},
+{
+ "Year": 2002,
+"Language": "Portuguese",
+"Enrollments": 8385 
+},
+{
+ "Year": 1998,
+"Language": "Portuguese",
+"Enrollments": 6926 
+},
+{
+ "Year": 1995,
+"Language": "Portuguese",
+"Enrollments": 6531 
+},
+{
+ "Year": 1990,
+"Language": "Portuguese",
+"Enrollments": 6118 
+},
+{
+ "Year": 1986,
+"Language": "Portuguese",
+"Enrollments": 5071 
+},
+{
+ "Year": 1983,
+"Language": "Portuguese",
+"Enrollments": 4397 
+},
+{
+ "Year": 2009,
+"Language": "Russian",
+"Enrollments": 26814 
+},
+{
+ "Year": 2006,
+"Language": "Russian",
+"Enrollments": 24810 
+},
+{
+ "Year": 2002,
+"Language": "Russian",
+"Enrollments": 23921 
+},
+{
+ "Year": 1998,
+"Language": "Russian",
+"Enrollments": 23791 
+},
+{
+ "Year": 1995,
+"Language": "Russian",
+"Enrollments": 24729 
+},
+{
+ "Year": 1990,
+"Language": "Russian",
+"Enrollments": 44476 
+},
+{
+ "Year": 1986,
+"Language": "Russian",
+"Enrollments": 33945 
+},
+{
+ "Year": 1983,
+"Language": "Russian",
+"Enrollments": 30453 
+} 
+]
+  $scope.controls = [] 
+  $scope.filters = [
+ {
+ "variable": "Year",
+"value": 2009 
+},
+{
+ "variable": "Year",
+"value": 2006 
+},
+{
+ "variable": "Year",
+"value": 2002 
+},
+{
+ "variable": "Year",
+"value": 1998 
+},
+{
+ "variable": "Year",
+"value": 1995 
+},
+{
+ "variable": "Year",
+"value": 1990 
+},
+{
+ "variable": "Year",
+"value": 1986 
+},
+{
+ "variable": "Year",
+"value": 1983 
+} 
+]
+  
+  $scope.drawChart = function(){
+    drawChart($scope.opts, $scope.data)  
+  }
+  
+  $scope.$watch('selected', function(){
+    var keys = _.pluck($scope.selected, "variable")
+    var values = _.pluck($scope.selected, "value")
+    $scope.opts.selected = _.zipObject(keys, values)
+  }) 
+  
+  $scope.$watch('opts',function(){
+    $scope.drawChart()
+	}, true)
+}  
+
+function drawChart(opts, data){ 
+  if (Object.keys(opts.selected).length > 0){
+    data = _.filter(data, opts.selected)
+  }
+  
+  if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+    var data = d3.nest()
+      .key(function(d){
+        //return opts.group === undefined ? 'main' : d[opts.group]
+        //instead of main would think a better default is opts.x
+       return opts.group === undefined ? opts.y : d[opts.group];
+      }).entries(data);
+  }
+      
+  if (opts.disabled != undefined){
+    data.map(function(d, i){
+      d.disabled = opts.disabled[i]
+    })
+  }
+	
+	nv.addGraph(function() {
+		var chart = nv.models[opts.type]()
+			.x(function(d) { return d[opts.x] })
+			.y(function(d) { return d[opts.y] })
+			.width(opts.width)
+			.height(opts.height)
+		
+	chart
+  .showControls(false)
+          
+	
+
+	
+	
+	
+
+	d3.select("#" + opts.id + ' svg')
+  // .empty()
+		.datum(data)
+		.transition().duration(500)
+		.call(chart);
+	
+	 nv.utils.windowResize(chart.update);
+	 return chart;
+  });
+};
+</script>
+    
+  </body>
+</html>
