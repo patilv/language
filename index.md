@@ -121,14 +121,14 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
     height: 400px;
   }  
   </style>
-<div id = 'chart3e44c445ab1' class = 'rChart nvd3'></div>
+<div id = 'chart3e434787721' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart3e44c445ab1()
+      drawchart3e434787721()
     });
-    function drawchart3e44c445ab1(){  
+    function drawchart3e434787721(){  
       var opts = {
- "dom": "chart3e44c445ab1",
+ "dom": "chart3e434787721",
 "width":    800,
 "height":    400,
 "x": "Year",
@@ -136,7 +136,7 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
 "group": "Language",
 "type": "lineChart",
 "disabled": [ false, true, true, true, true, true, true, true, true, true, true ],
-"id": "chart3e44c445ab1" 
+"id": "chart3e434787721" 
 },
         data = [
  {
@@ -639,8 +639,6 @@ In the barchart below, we begin by comparing enrollments in Chinese and in India
 2. Hovering over the chart can provide information on the value for that bar and year.
 3. You can make the comparison in either one specific year (**select a year**) or across all years (click on **Year** in the menu on the left)
 
-**[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)
-
 
 ```r
 np2 = nPlot(Enrollments ~ Year, group = "Language", data = langmajormelt, type = "multiBarChart")
@@ -650,4 +648,5 @@ np2$chart(showControls = F)
 # np2$publish('np2',host='gist')
 ```
 
+**[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)**
 <iframe src="http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo" width=1200 height=450> </iframe>

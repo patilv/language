@@ -72,8 +72,6 @@ In the barchart below, we begin by comparing enrollments in Chinese and in India
 2. Hovering over the chart can provide information on the value for that bar and year.
 3. You can make the comparison in either one specific year (**select a year**) or across all years (click on **Year** in the menu on the left)
 
-**[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)
-
 ```{r results='asis',cache=FALSE,comment=NA}
 np2=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="multiBarChart")
 np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
@@ -81,4 +79,5 @@ np2$addFilters("Year")
 np2$chart(showControls = F)
 #np2$publish("np2",host="gist")
 ```
+**[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)**
 <iframe src="http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo" width=1200 height=450> </iframe>
