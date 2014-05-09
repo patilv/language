@@ -121,14 +121,14 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
     height: 400px;
   }  
   </style>
-<div id = 'chart238c3bc6184' class = 'rChart nvd3'></div>
+<div id = 'chart238c71f75bd5' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart238c3bc6184()
+      drawchart238c71f75bd5()
     });
-    function drawchart238c3bc6184(){  
+    function drawchart238c71f75bd5(){  
       var opts = {
- "dom": "chart238c3bc6184",
+ "dom": "chart238c71f75bd5",
 "width":    800,
 "height":    400,
 "x": "Year",
@@ -136,7 +136,7 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
 "group": "Language",
 "type": "lineChart",
 "disabled": [ false, true, true, true, true, true, true, true, true, true, true ],
-"id": "chart238c3bc6184" 
+"id": "chart238c71f75bd5" 
 },
         data = [
  {
@@ -646,16 +646,6 @@ np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
 np2$addFilters("Year")
 np2$chart(showControls = F)
 np2$chart(margin = list(left = 0, right = 0))
-np2
+np2$save("np2.html", cdn = TRUE)
 ```
-
-```
-## Error: object 'opts_current' not found
-```
-
-```r
-# np2$publish('np2',host='gist') np2$save('np2.html',cdn=TRUE)
-```
-
-<iframe src="http://patilv.github.io/language/np2.html" width=1200 height=500> </iframe>
 

@@ -72,15 +72,13 @@ In the barchart below, we begin by comparing enrollments in Chinese and in India
 2. Hovering over the chart can provide information on the value for that bar and year.
 3. You can make the comparison in either one specific year (**select a year**) or across all years (click on **Year** in the menu on the left)
 
-```{r, results='asis',cache=FALSE}
+```{r}
 np2=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="multiBarChart")
 np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
 np2$addFilters("Year")
 np2$chart(showControls = F)
 np2$chart(margin = list(left = 0,right=0))
-np2
-#np2$publish("np2",host="gist")
-#np2$save("np2.html",cdn=TRUE)
+np2$save("np2.html",cdn=TRUE)
 ```
 <iframe src="http://patilv.github.io/language/np2.html" width=1200 height=500> </iframe>
 
