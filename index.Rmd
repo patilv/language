@@ -24,7 +24,7 @@ Data were collected on the following languages - French, German, Italian, Japane
 
 ### A look at the dataset in a tabular form
 
-```{r, results='asis'}
+```{r, results='asis',cache=FALSE}
 library(knitr)
 lang=read.csv("languages.csv")
 langmajor=lang[-c(2:12)]
@@ -34,7 +34,7 @@ kable(langmajor)
 ## Pattern of Enrollments across the 8 years when surveys were conducted.
 Before we see the patterns, we will need to convert our dataset into the long form. This, we perform using the reshape2 package. See how the dataframe format from the earlier table is modified to the following. 
 
-```{r, results='asis'}
+```{r, results='asis',cache=FALSE}
 library(reshape2)
 langmajormelt=melt(langmajor,id="Year")
 colnames(langmajormelt)=c("Year","Language","Enrollments")
@@ -43,7 +43,7 @@ kable(tail(langmajormelt))
 ```
 ### On to the graph(s) --- ggplot2
 
-```{r}
+```{r cache=FALSE}
 library(ggplot2)
 ggplot(langmajormelt,aes(x=Year,y=Enrollments))+geom_point()+geom_line()+facet_wrap(~Language,scales="free")+theme_bw()
 ```
@@ -72,13 +72,11 @@ In the barchart below, we begin by comparing enrollments in Chinese and in India
 2. Hovering over the chart can provide information on the value for that bar and year.
 3. You can make the comparison in either one specific year (**select a year**) or across all years (click on **Year** in the menu on the left)
 
-```{r}
+```{r results='asis',cache=FALSE,comment=NA}
 np2=nPlot(Enrollments~Year,group="Language",data=langmajormelt,type="multiBarChart")
 np2$set(disabled = c(F, T, T, T, T, T, T, F, T, T, T))
 np2$addFilters("Year")
 np2$chart(showControls = F)
-np2$chart(margin = list(left = 0,right=0))
-np2$save("np2.html",cdn=TRUE)
+#np2$publish("np2",host="gist")
 ```
-<iframe src="http://patilv.github.io/language/np2.html" width=1200 height=500> </iframe>
-
+<iframe src="http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo" width=1200 height=450> </iframe>

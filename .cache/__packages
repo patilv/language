@@ -1,5 +1,6 @@
 base
 ggplot2
+httr
 knitr
 rCharts
 reshape2
