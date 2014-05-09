@@ -121,14 +121,14 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
     height: 400px;
   }  
   </style>
-<div id = 'chart3e466c7677' class = 'rChart nvd3'></div>
+<div id = 'chart3e44c445ab1' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart3e466c7677()
+      drawchart3e44c445ab1()
     });
-    function drawchart3e466c7677(){  
+    function drawchart3e44c445ab1(){  
       var opts = {
- "dom": "chart3e466c7677",
+ "dom": "chart3e44c445ab1",
 "width":    800,
 "height":    400,
 "x": "Year",
@@ -136,7 +136,7 @@ np1$show("inline", include_assets = TRUE, standalone = TRUE)
 "group": "Language",
 "type": "lineChart",
 "disabled": [ false, true, true, true, true, true, true, true, true, true, true ],
-"id": "chart3e466c7677" 
+"id": "chart3e44c445ab1" 
 },
         data = [
  {
@@ -638,6 +638,8 @@ In the barchart below, we begin by comparing enrollments in Chinese and in India
 1. Clicking on a dot/circle of a legend can make that language appear/disappear from the plot. Can help with the comparison of enrollments between languages. you can have as many languages in the chart as you wish.
 2. Hovering over the chart can provide information on the value for that bar and year.
 3. You can make the comparison in either one specific year (**select a year**) or across all years (click on **Year** in the menu on the left)
+
+**[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)
 
 
 ```r
